@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>高级教程</title>
+    <title>使用 Pyodide</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pyodide.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/page.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/xin-css/main.css" />
@@ -70,7 +71,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "xinetzone/sanstyle-starter");
+    script.setAttribute("repo", "xinetzone/pyodide-book");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -94,12 +95,12 @@ commentsRunWhenDOMLoaded(addUtterances);
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xinetzone.github.io/sanstyle-starter/docs/principle/topic.html" />
+    <link rel="canonical" href="https://xinetzone.github.io/pyodide-book/docs/usage/index.html" />
     <link rel="shortcut icon" href="../../_static/page-logo.jfif"/>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="关于" href="../about/index.html" />
-    <link rel="prev" title="解释" href="index.html" />
+    <link rel="next" title="在 web worker 中使用 Pyodide" href="00_webworker.html" />
+    <link rel="prev" title="下载和部署 Pyodide" href="../start/01_downloading-and-deploying.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -136,15 +137,15 @@ commentsRunWhenDOMLoaded(addUtterances);
   教程
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../README.html">
-   Sanstyle 模板
+   Pyodide Book
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../start/index.html">
-   快速上手
+   Pyodide 快速上手
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -153,49 +154,40 @@ commentsRunWhenDOMLoaded(addUtterances);
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../start/00_how.html">
-     如何启动项目
+    <a class="reference internal" href="../start/00_intro.html">
+     入门
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/01_downloading-and-deploying.html">
+     下载和部署 Pyodide
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../tutorials/index.html">
-   指南
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   使用 Pyodide
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/what.html">
-     What
+    <a class="reference internal" href="00_webworker.html">
+     在 web worker 中使用 Pyodide
     </a>
    </li>
-  </ul>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  原理
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="index.html">
-   解释
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     高级教程
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_loading-packages.html">
+     加载包
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_type-conversions.html">
+     Type translations
     </a>
    </li>
   </ul>
@@ -211,8 +203,8 @@ commentsRunWhenDOMLoaded(addUtterances);
   <a class="reference internal" href="../about/index.html">
    关于
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -220,6 +212,11 @@ commentsRunWhenDOMLoaded(addUtterances);
    <li class="toctree-l2">
     <a class="reference internal" href="../about/architecture.html">
      项目架构
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../about/how.html">
+     如何启动项目
     </a>
    </li>
    <li class="toctree-l2">
@@ -238,8 +235,8 @@ commentsRunWhenDOMLoaded(addUtterances);
   <a class="reference internal" href="../other/index.html">
    外部资源
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -320,7 +317,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/principle/topic.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/usage/index.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -336,11 +333,11 @@ commentsRunWhenDOMLoaded(addUtterances);
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/xinetzone/sanstyle-starter"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/xinetzone/pyodide-book"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/xinetzone/sanstyle-starter/issues/new?title=Issue%20on%20page%20%2Fdocs/principle/topic.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/xinetzone/pyodide-book/issues/new?title=Issue%20on%20page%20%2Fdocs/usage/index.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -361,6 +358,29 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   网络浏览器
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#web-workers">
+   Web Workers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#node-js">
+   Node.js
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -369,15 +389,89 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>高级教程<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pyodide">
+<h1>使用 Pyodide<a class="headerlink" href="#pyodide" title="永久链接至标题">¶</a></h1>
+<p>Pyodide 可用于您希望在 Web 浏览器或后端 JavaScript 环境中运行 Python 的任何上下文。</p>
+<section id="id1">
+<h2>网络浏览器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>要在网页上使用 Pyodide，您需要加载 <code class="docutils literal notranslate"><span class="pre">pyodide.js</span></code> 并使用 <code class="xref any docutils literal notranslate"><span class="pre">loadPyodide</span></code> 指定包的 index URL 来初始化 Pyodide：</p>
+<div class="highlight-html-pyodide notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+      &lt;script src=&quot;https://cdn.jsdelivr.net/pyodide/v0.18.1/full/pyodide.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+      async function main(){
+        let pyodide = await loadPyodide({
+          indexURL : &quot;https://cdn.jsdelivr.net/pyodide/v0.18.1/full/&quot;
+        });
+        console.log(pyodide.runPython(&quot;1 + 2&quot;));
+      }
+      main();
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>有关现有功能的更深入讨论，请参阅 <a class="reference internal" href="../start/00_intro.html#quickstart"><span class="std std-ref">入门</span></a> 以及 <a class="reference internal" href="01_loading-packages.html#loading-packages"><span class="std std-ref">加载包</span></a> 和 <a class="reference internal" href="02_type-conversions.html#type-translations"><span class="std std-ref">Type translations</span></a>。</p>
+<p>您还可以使用 <a class="reference external" href="https://www.npmjs.com/package/pyodide">Pyodide NPM 包</a> 将 Pyodide 集成到您的应用程序中。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>为避免混淆，请注意：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cdn.jsdelivr.net/pyodide/</span></code> 分发用 Pyodide 和 <code class="docutils literal notranslate"><span class="pre">pyodide.js</span></code> 构建的 Python 包</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cdn.jsdelivr.net/npm/pyodide&#64;0.18.1/</span></code> 是 Pyodide NPM 包的镜像，其中不包含任何 WASM 文件</p></li>
+</ul>
+</div>
+</section>
+<section id="web-workers">
+<h2>Web Workers<a class="headerlink" href="#web-workers" title="永久链接至标题">¶</a></h2>
+<p>默认情况下，WebAssembly 在主浏览器线程中运行，它可以使 UI 对长时间运行的计算无响应。</p>
+<p>为了避免这种情况，一种解决方案是 <a class="reference internal" href="00_webworker.html#using-from-webworker"><span class="std std-ref">在 WebWorker 中运行 Pyodide</span></a>。</p>
+</section>
+<section id="node-js">
+<h2>Node.js<a class="headerlink" href="#node-js" title="永久链接至标题">¶</a></h2>
+<p>从 0.18.0 版本开始，Pyodide 可以在 Node.js 中实验性地运行。</p>
+<p>安装 <a class="reference external" href="https://www.npmjs.com/package/pyodide">Pyodide npm 包</a>，</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="n">pyodide</span>
+</pre></div>
+</div>
+<p>从 <a class="reference external" href="https://github.com/pyodide/pyodide/releases">Github 版本</a>（<strong>pyodide-build-*.tar.bz2</strong> 文件）下载并提取 Pyodide 包。发行版的版本需要与此包的版本完全匹配。</p>
+<p>然后你可以在 Node.js 中加载 Pyodide，如下所示，</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">pyodide_pkg</span> <span class="o">=</span> <span class="k">await</span> <span class="k">import</span><span class="p">(</span><span class="s2">&quot;pyodide/pyodide.js&quot;</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">pyodide</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">pyodide_pkg</span><span class="p">.</span><span class="nx">loadPyodide</span><span class="p">({</span>
+  <span class="nx">indexURL</span><span class="o">:</span> <span class="s2">&quot;&lt;pyodide artifacts folder&gt;&quot;</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="k">await</span> <span class="nx">pyodide</span><span class="p">.</span><span class="nx">runPythonAsync</span><span class="p">(</span><span class="s2">&quot;1+1&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>要启动支持顶级 await 的 Node.js REPL，请使用 <code class="docutils literal notranslate"><span class="pre">node</span> <span class="pre">--experimental-repl-await</span></code>。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>在 Node.js 中运行时，当前不会缓存从 PyPi 下载的包。每次运行 <code class="docutils literal notranslate"><span class="pre">micropip.install</span></code> 时都会重新下载软件包。</p>
+<p>出于同样的原因，目前明确不支持从 CDN 安装 Pyodide 包。</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="00_webworker.html">在 web worker 中使用 Pyodide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_loading-packages.html">加载包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_type-conversions.html">Type translations</a></li>
+</ul>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "xinetzone/sanstyle-starter",
+            repo: "xinetzone/pyodide-book",
             ref: "main",
         },
         codeMirrorConfig: {
@@ -386,7 +480,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./docs/principle"
+            path: "./docs/usage"
         },
         predefinedOutput: true
     }
@@ -403,19 +497,19 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="index.html" title="上一页 页">
+        <a class="left-prev" href="../start/01_downloading-and-deploying.html" title="上一页 页">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">上一页</p>
-                <p class="prevnext-title">解释</p>
+                <p class="prevnext-title">下载和部署 Pyodide</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../about/index.html" title="下一页 页">
+        <a class="right-next" href="00_webworker.html" title="下一页 页">
             <div class="prevnext-info">
                 <p class="prevnext-label">下一页</p>
-                <p class="prevnext-title">关于</p>
+                <p class="prevnext-title">在 web worker 中使用 Pyodide</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

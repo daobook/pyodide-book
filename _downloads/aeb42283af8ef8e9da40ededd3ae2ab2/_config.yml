@@ -31,7 +31,7 @@ html:
   use_edit_page_button: false # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
   use_repository_button: true # Whether to add a link to your repository button
   use_issues_button: true # Whether to add an "open an issue" button
-  baseurl: https://xinetzone.github.io/sanstyle-starter/ # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  baseurl: https://xinetzone.github.io/pyodide-book/ # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   
   extra_navbar: |
     <div class="w3-padding w3-card-4 w3-pale-green">
@@ -66,10 +66,10 @@ html:
   comments:
     hypothesis: true
     utterances:
-      repo: "xinetzone/sanstyle-starter"
+      repo: "xinetzone/pyodide-book"
 
 repository:
-  url: https://github.com/xinetzone/sanstyle-starter # The URL to your book's repository
+  url: https://github.com/xinetzone/pyodide-book # The URL to your book's repository
   path_to_book: "./" # A path to your book's folder, relative to the repository root., ie docs
   branch: main # Which branch of the repository should be used when creating links
 
@@ -131,31 +131,34 @@ sphinx:
           \newcommand\floor[1]{\lfloor#1\rfloor}
           \newcommand{\bmat}{\left[\begin{array}}
           \newcommand{\emat}{\end{array}\right]}
-    # intersphinx_mapping:
-    #   wiki:
-    #     - "https://xinetzone.github.io/wiki/"
-    #     - null
-    #   ebp:
-    #     - "https://executablebooks.org/en/latest/"
-    #     - null
-    #   myst-parser:
-    #     - "https://myst-parser.readthedocs.io/en/latest/"
-    #     - null
-    #   myst-nb:
-    #     - "https://myst-nb.readthedocs.io/en/latest/"
-    #     - null
-    #   sphinx:
-    #     - "https://www.sphinx-doc.org/en/master"
-    #     - null
-    #   nbformat:
-    #     - "https://nbformat.readthedocs.io/en/latest"
-    #     - null
-    #   sphinx-panels:
-    #     - https://sphinx-panels.readthedocs.io/en/sphinx-book-theme/
-    #     - null
-    #   plotly-book:
-    #     - "https://xinetzone.github.io/plotly-book/"
-    #     - null
+    intersphinx_mapping:
+      pyodide:
+        - "https://pyodide.org/en/stable/"
+        - null
+      # wiki:
+      #   - "https://xinetzone.github.io/wiki/"
+      #   - null
+      # ebp:
+      #   - "https://executablebooks.org/en/latest/"
+      #   - null
+      # myst-parser:
+      #   - "https://myst-parser.readthedocs.io/en/latest/"
+      #   - null
+      # myst-nb:
+      #   - "https://myst-nb.readthedocs.io/en/latest/"
+      #   - null
+      # sphinx:
+      #   - "https://www.sphinx-doc.org/en/master"
+      #   - null
+      # nbformat:
+      #   - "https://nbformat.readthedocs.io/en/latest"
+      #   - null
+      # sphinx-panels:
+      #   - https://sphinx-panels.readthedocs.io/en/sphinx-book-theme/
+      #   - null
+      # plotly-book:
+      #   - "https://xinetzone.github.io/plotly-book/"
+      #   - null
     language: zh_CN
 
   extra_extensions:

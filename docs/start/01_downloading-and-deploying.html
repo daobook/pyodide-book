@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Pyodide 快速上手</title>
+    <title>下载和部署 Pyodide</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -95,12 +95,12 @@ commentsRunWhenDOMLoaded(addUtterances);
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xinetzone.github.io/pyodide-book/docs/start/index.html" />
+    <link rel="canonical" href="https://xinetzone.github.io/pyodide-book/docs/start/01_downloading-and-deploying.html" />
     <link rel="shortcut icon" href="../../_static/page-logo.jfif"/>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="入门" href="00_intro.html" />
-    <link rel="prev" title="Pyodide Book" href="../../README.html" />
+    <link rel="next" title="使用 Pyodide" href="../usage/index.html" />
+    <link rel="prev" title="入门" href="00_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -144,7 +144,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="index.html">
    Pyodide 快速上手
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -152,14 +152,14 @@ commentsRunWhenDOMLoaded(addUtterances);
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="00_intro.html">
      入门
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_downloading-and-deploying.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      下载和部署 Pyodide
     </a>
    </li>
@@ -317,7 +317,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/start/index.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/start/01_downloading-and-deploying.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -337,7 +337,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/xinetzone/pyodide-book/issues/new?title=Issue%20on%20page%20%2Fdocs/start/index.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/xinetzone/pyodide-book/issues/new?title=Issue%20on%20page%20%2Fdocs/start/01_downloading-and-deploying.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -358,6 +358,48 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   下载 Pyodide
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cdn">
+     CDN
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#github">
+     Github 发布
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#serving-pyodide-packages">
+   提供 Pyodide 包
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     在本地服务
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     远程部署
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -367,17 +409,63 @@ commentsRunWhenDOMLoaded(addUtterances);
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="pyodide">
-<h1>Pyodide 快速上手<a class="headerlink" href="#pyodide" title="永久链接至标题">¶</a></h1>
-<p>带有科学堆栈的 Python，编译为 WebAssembly。</p>
-<p>Pyodide 可用于您希望在 Web 浏览器中运行 Python 的任何上下文。</p>
-<p>Pyodide 通过 WebAssembly 将 Python 3.9 运行时以及包括 NumPy、Pandas、Matplotlib、SciPy 和 scikit-learn 在内的 Python 科学堆栈带入浏览器。目前有超过 75 个软件包可用。此外，还可以从 PyPI 安装纯 Python 轮子。</p>
-<p>Pyodide 提供了 Javascript 和 Python 之间对象的透明转换。在浏览器中使用时，Python 可以完全访问 Web API。</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="00_intro.html">入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_downloading-and-deploying.html">下载和部署 Pyodide</a></li>
-</ul>
+<span id="downloading-deploying"></span><h1><a class="reference external" href="https://pyodide.org/en/stable/usage/downloading-and-deploying.html#downloading-deploying">下载和部署 Pyodide</a><a class="headerlink" href="#pyodide" title="永久链接至标题">¶</a></h1>
+<section id="id1">
+<h2>下载 Pyodide<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<section id="cdn">
+<h3>CDN<a class="headerlink" href="#cdn" title="永久链接至标题">¶</a></h3>
+<p>Pyodide 包，包括 <code class="docutils literal notranslate"><span class="pre">pyodide.js</span></code> 文件，可从 JsDelivr CDN 获得，</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>渠道</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">indexURL</span></code></p></th>
+<th class="head"><p>注释</p></th>
+<th class="head"><p>REPL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>最新发布</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://cdn.jsdelivr.net/pyodide/v0.18.1/full/</span></code></p></td>
+<td><p>推荐，浏览器缓存</p></td>
+<td><p><a class="reference external" href="https://pyodide.org/en/stable/console.html">链接</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Dev (<code class="docutils literal notranslate"><span class="pre">main</span></code> branch)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://cdn.jsdelivr.net/pyodide/dev/full/</span></code></p></td>
+<td><p>为 main 上的每次提交重新部署，没有浏览器缓存，应该只用于测试</p></td>
+<td><p><a class="reference external" href="https://pyodide.org/en/latest/console.html">链接</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>要访问特定文件，请将文件名附加到 <code class="docutils literal notranslate"><span class="pre">indexURL</span></code>。例如，在 <code class="docutils literal notranslate"><span class="pre">pyodide.js</span></code> 的情况下，<code class="docutils literal notranslate"><span class="pre">&quot;${indexURL}pyodide.js&quot;</span></code>。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>之前的 CDN <code class="docutils literal notranslate"><span class="pre">pyodide-cdn2.iodide.io</span></code> 已弃用，不应使用。</p>
 </div>
+</section>
+<section id="github">
+<h3>Github 发布<a class="headerlink" href="#github" title="永久链接至标题">¶</a></h3>
+<p>您还可以从 <a class="reference external" href="https://github.com/pyodide/pyodide/releases">Github 版本</a>（<code class="docutils literal notranslate"><span class="pre">pyodide-build-*.tar.bz2</span></code> 文件）下载 Pyodide 包，自己为它们提供服务，如以下部分所述。</p>
+</section>
+</section>
+<section id="serving-pyodide-packages">
+<span id="id2"></span><h2>提供 Pyodide 包<a class="headerlink" href="#serving-pyodide-packages" title="永久链接至标题">¶</a></h2>
+<p>提供 Pyodide 包</p>
+<p>如果您构建了 Pyodide 发行版或下载了发行版 tarball，则需要使用适当的 headers 提供 Pyodide 文件。</p>
+<section id="id3">
+<h3>在本地服务<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>使用 Python 3.7.5+，您可以通过启动在本地提供 Pyodide 文件</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span>
+</pre></div>
+</div>
+<p>来自 Pyodide 分发文件夹。</p>
+<p>将您的 WebAssembly 感知浏览器指向 <a class="reference external" href="http://localhost:8000/console.html">http://localhost:8000/console.html</a> 并打开您的浏览器控制台以通过 Pyodide 查看 Python 的输出！</p>
+</section>
+<section id="id4">
+<h3>远程部署<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>任何能够托管静态文件并正确设置 WASM MIME 类型和 CORS headers 的解决方案都可以使用。例如，您可以使用 Github Pages 或类似的服务。</p>
+<p>有关优化大小和加载时间的其他建议，请参阅有关<a class="reference external" href="https://emscripten.org/docs/compiling/Deploying-Pages.html">部署的 Emscripten 文档</a>。</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -410,19 +498,19 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../../README.html" title="上一页 页">
+        <a class="left-prev" href="00_intro.html" title="上一页 页">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">上一页</p>
-                <p class="prevnext-title">Pyodide Book</p>
+                <p class="prevnext-title">入门</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="00_intro.html" title="下一页 页">
+        <a class="right-next" href="../usage/index.html" title="下一页 页">
             <div class="prevnext-info">
                 <p class="prevnext-label">下一页</p>
-                <p class="prevnext-title">入门</p>
+                <p class="prevnext-title">使用 Pyodide</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

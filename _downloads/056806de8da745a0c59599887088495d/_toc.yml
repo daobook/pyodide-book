@@ -7,15 +7,12 @@ parts:
   - file: docs/start/index
     sections:
     - glob: docs/start/**
-  - file: docs/tutorials/index
+  - file: docs/usage/index
     sections:
-    - glob: docs/tutorials/**
-
-- caption: 原理
-  chapters:
-  - file: docs/principle/index
-    sections:
-    - glob: docs/principle/**
+    - glob: docs/usage/**
+  # - file: docs/api/index
+  #   sections:
+  #   - glob: docs/api/**
 
 - caption: 混沌
   chapters:
