@@ -1,4 +1,4 @@
-(start:how)=
+(about:how)=
 # 如何启动项目
 
 ## 云端配置
