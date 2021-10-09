@@ -165,3 +165,5 @@ sphinx:
     - sphinx_click.ext
     - sphinx_inline_tabs
     - sphinx.ext.intersphinx
+    - sphinx.ext.autodoc
+    - sphinx_argparse_cli

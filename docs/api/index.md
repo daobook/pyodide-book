@@ -1,4 +1,4 @@
-# Pyodide 快速上手
+# API 参考
 
 ```{tableofcontents}
 ```

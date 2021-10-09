@@ -10,10 +10,16 @@ parts:
   - file: docs/usage/index
     sections:
     - glob: docs/usage/**
-  # - file: docs/api/index
-  #   sections:
-  #   - glob: docs/api/**
-
+  - file: docs/api/index
+    sections:
+    - glob: docs/api/**
+  - file: docs/dev/index
+    sections:
+    - glob: docs/dev/**
+    - file: docs/contributing/index
+      sections:
+      - glob: docs/contributing/**
+  
 - caption: 混沌
   chapters:
   - file: docs/about/index
