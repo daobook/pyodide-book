@@ -16,3 +16,7 @@ gunicorn
 # dash-xinet -i https://pypi.org/simple/
 sanstyle -i https://pypi.org/simple/ 
 sphinx-argparse-cli
+sphinxcontrib-napoleon
+sphinx-js
+autodocsumm
+sphinx-issues
